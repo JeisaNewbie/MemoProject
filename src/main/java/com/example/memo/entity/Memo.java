@@ -1,24 +1,22 @@
 package com.example.memo.entity;
 
 import com.example.memo.dto.MemoRequestDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Builder
 @Getter
-@AllArgsConstructor
 public class Memo {
+    @Setter
     private Long id;
     private String title;
     private String content;
 
-    public void updateMemo(MemoRequestDto dto) {
-        this.title = dto.getTitle();
-        this.content = dto.getContent();
+    public void updateMemo(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
-    public void updateTitle(MemoRequestDto dto) {
-        this.title = dto.getTitle();
+    public void updateTitle(String title) {
+        this.title = title;
     }
 }
