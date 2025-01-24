@@ -1,12 +1,11 @@
 package com.example.memo.entity;
 
-import com.example.memo.dto.MemoRequestDto;
 import lombok.*;
 
 @Builder
 @Getter
+@AllArgsConstructor
 public class Memo {
-    @Setter
     private Long id;
     private String title;
     private String content;

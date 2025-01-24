@@ -1,15 +1,23 @@
 package com.example.memo.repository;
 
+import com.example.memo.dto.MemoResponseDto;
 import com.example.memo.entity.Memo;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MemoRepository {
-    Memo saveMemo(Memo memo);
+    MemoResponseDto saveMemo(Memo memo);
 
-    List<Memo> findAllMemos();
+    List<MemoResponseDto> findAllMemos();
 
-    Memo findMemoById(Long id);
+    Optional<Memo> findMemoById(Long id);
 
-    void deleteMemo(Long id);
+    Memo findMemoByIdOrOrElseThrow(Long id);
+
+    int updateMemo(Long id, String title, String content);
+
+    int updateTitle(Long id, String title);
+
+    int deleteMemo(Long id);
 }
